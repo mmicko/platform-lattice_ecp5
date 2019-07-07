@@ -1,6 +1,4 @@
 # Lattice ECP5: development platform for [PlatformIO](http://platformio.org)
-[![Build Status](https://travis-ci.org/platformio/platform-lattice_ecp5.svg?branch=develop)](https://travis-ci.org/platformio/platform-lattice_ice40)
-[![Build status](https://ci.appveyor.com/api/projects/status/4q0e67cy1ax5x67a/branch/develop?svg=true)](https://ci.appveyor.com/project/ivankravets/platform-lattice_ecp5/branch/develop)
 
 Lattice ECP5 FPGAs are fully usable by open source tools.
 
