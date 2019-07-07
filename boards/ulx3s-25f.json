@@ -1,0 +1,26 @@
+{
+    "build": {
+      "core": "ulx3s-25f",
+      "cpu": "fpga",
+      "f_cpu": "12000000L",
+      "hwids": [
+        [
+          "0x0403",
+          "0x6010"
+        ]
+      ],
+      "mcu": "ECP5-LFE5U-25F-CABGA381",
+      "pack": "CABGA381",
+      "size": "25k",
+      "type": "lfe5u"
+    },
+    "frameworks": [],
+    "name": "ULX3S-25F",
+    "upload": {
+      "maximum_ram_size": 32768,
+      "maximum_size": 32768
+    },
+    "url": "http://www.latticesemi.com/icestick",
+    "vendor": "Lattice"
+  }
+  
