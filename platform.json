@@ -17,18 +17,18 @@
     {
       "toolchain-yosys": [
         {
-          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-yosys-linux_x86_64-2019.10.1.tar.gz",
-          "sha1": "bbdf1a32c0390b1b3f8cadc5454ff856de0c64bd",
-          "version": "2019.10.1",
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-yosys-linux_x86_64-0.9.201910.tar.gz",
+          "sha1": "93c2dd8a83a3da41d20db026d78489f7998c7f51",
+          "version": "0.9.201910",
           "system": [
               "linux_x86_64"
           ]
         }
       ],
-      "toolchain-ecp5": [
+      "toolchain-ice40": [
         {
           "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-ecp5-linux_x86_64-2019.10.1.tar.gz",
-          "sha1": "18b71e8886515214d3f61c4df027a7f1b91d58ef",
+          "sha1": "05ac575f313e32327426983b34a0442ff6b1bb36",
           "version": "2019.10.1",
           "system": [
               "linux_x86_64"
@@ -37,9 +37,9 @@
       ],
       "toolchain-iverilog": [
         {
-          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-iverilog-linux_x86_64-2019.10.1.tar.gz",
-          "sha1": "87dcb4a13fb7ded75cf851afa9fe463445fd327b",
-          "version": "2019.10.1",
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-iverilog-linux_x86_64-10.3.0.tar.gz",
+          "sha1": "47c9b331bba66e92c9f71cdd771f74749ec3f1ef",
+          "version": "10.3.0",
           "system": [
               "linux_x86_64"
           ]
@@ -47,9 +47,9 @@
       ],
       "toolchain-verilator": [
         {
-          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-verilator-linux_x86_64-2019.10.1.tar.gz",
-          "sha1": "34508b13d06c311c8489701076a112f40ce32e40",
-          "version": "2019.10.1",
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-verilator-linux_x86_64-4.20.0.tar.gz",
+          "sha1": "b85d2e82c26d42ad7b76cdfb3d2e82495bb0857f",
+          "version": "4.20.0",
           "system": [
               "linux_x86_64"
           ]
@@ -60,7 +60,7 @@
   "packages": {
     "toolchain-yosys": {
       "type": "toolchain",
-      "version": "~2019.10.1"
+      "version": "~0.9.201910"
     },
     "toolchain-ecp5": {
       "type": "toolchain",
@@ -68,11 +68,11 @@
     },
     "toolchain-iverilog": {
       "type": "toolchain",
-      "version": "~2019.10.1"
+      "version": "~10.3.0"
     },
     "toolchain-verilator": {
       "type": "toolchain",
-      "version": "~2019.10.1"
+      "version": "~4.20.0"
     }
   }
 }
