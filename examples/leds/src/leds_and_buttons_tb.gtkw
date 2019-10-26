@@ -1,0 +1,21 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Sat Oct 26 11:38:48 2019
+[*]
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-11.314166 964 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] leds_and_buttons_tb.
+[sst_width] 223
+[signals_width] 134
+[sst_expanded] 1
+[sst_vpaned_height] 160
+@28
+leds_and_buttons_tb.clk
+@29
+leds_and_buttons_tb.UUT.led[4:0]
+@28
+leds_and_buttons_tb.UUT.btn[2:0]
+[pattern_trace] 1
+[pattern_trace] 0

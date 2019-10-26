@@ -2,7 +2,7 @@
     "build": {
       "core": "ulx3s-25f",
       "cpu": "fpga",
-      "f_cpu": "12000000L",
+      "f_cpu": "25000000L",
       "hwids": [
         [
           "0x0403",
@@ -17,10 +17,10 @@
     "frameworks": [],
     "name": "ULX3S-25F",
     "upload": {
-      "maximum_ram_size": 32768,
-      "maximum_size": 32768
+      "command": "ujprog",
+      "args": "-q -j SRAM"
     },
-    "url": "http://www.latticesemi.com/icestick",
-    "vendor": "Lattice"
+    "url": "https://github.com/emard/ulx3s",
+    "vendor": "Radiona"
   }
   

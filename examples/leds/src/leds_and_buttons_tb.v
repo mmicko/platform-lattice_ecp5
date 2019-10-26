@@ -1,24 +1,36 @@
 //-------------------------------------------------------------------
-//-- counter_tb.v
+//-- leds_and_buttons_tb.v
 //-- Testbench
 //-------------------------------------------------------------------
 `default_nettype none
 `timescale 100 ns / 10 ns
 
-module counter_tb();
+module leds_and_buttons_tb();
   reg clk = 0;
   always #1 clk = ~clk;
 
+  reg  [2:0] btn = 0;
   wire [4:0] led;
 
-  counter #(.LOG2DELAY(1)) UUT (.clk_25mhz(clk), .led(led));
+  leds_and_buttons UUT (.btn(btn), .led(led));
 
   initial begin
     // filename is propagated by platformio
     $dumpfile(``VCD_OUTPUT);
-    $dumpvars(0, counter_tb);    
-    // simulation lasts 1000 clocks
-    #1000 $display("End of simulation");
+    $dumpvars(0, leds_and_buttons_tb);
+    
+    btn = 3'b001;
+    #20
+    btn = 3'b010;
+    #20
+    btn = 3'b100;
+    #20
+    btn = 3'b101;
+    #20
+    btn = 3'b111;
+    #20
+    
+    $display("End of simulation");
     $finish;
   end
 

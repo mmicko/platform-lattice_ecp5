@@ -32,8 +32,8 @@ pioPlatform = env.PioPlatform()
 
 env.Replace(
     PROGNAME='hardware',
-    UPLOADER='iceprog',
-    UPLOADERFLAGS=[],
+    UPLOADER=env.BoardConfig().get('upload.command', ''),
+    UPLOADERFLAGS=env.BoardConfig().get('upload.args', ''),
     UPLOADBINCMD='$UPLOADER $UPLOADERFLAGS $SOURCES')
 env.Append(SIMULNAME='simulation')
 
@@ -128,7 +128,7 @@ synth = Builder(
 # Builder: Arachne-pnr (.json --> .asc)
 #
 pnr = Builder(
-    action='nextpnr-ecp5 --{1} --package {2} --json $SOURCE --lpf {3} --textcfg $TARGET --quiet'.format(
+    action='nextpnr-ecp5 --{1} --package {2} --json $SOURCE --lpf {3} --textcfg $TARGET --quiet --lpf-allow-unconstrained'.format(
         env.BoardConfig().get('build.type', ''),
         env.BoardConfig().get('build.size', '25k'),
         env.BoardConfig().get('build.pack', 'CABGA381'),
@@ -164,7 +164,7 @@ AlwaysBuild(target_upload)
 #
 iverilog = Builder(
     action='iverilog {0} -o $TARGET -D VCD_OUTPUT={1} {2} $SOURCES'.format(
-        IVER_PATH, TARGET_SIM, VLIB_FILES),
+        IVER_PATH, TARGET_SIM + '.vcd' if TARGET_SIM else '', VLIB_FILES),
     suffix='.out',
     src_suffix='.v')
 vcd = Builder(
@@ -197,7 +197,7 @@ AlwaysBuild(target_sim)
 
 # -- Verilator builder
 verilator = Builder(
-    action='verilator --lint-only -v {0}/ecp5/cells_sim.v {1} {2} {3} {4} $SOURCES'.format(
+    action='verilator --lint-only -v {0}/ecp5/cells_sim.v -DNO_INCLUDES {1} {2} {3} {4} $SOURCES'.format(
         YOSYS_PATH,
         '-Wall',
         '-Wno-style',
