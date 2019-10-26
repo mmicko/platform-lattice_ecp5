@@ -1,6 +1,6 @@
 {
     "build": {
-      "core": "ulx3s-25f",
+      "core": "ulx3s-12f",
       "cpu": "fpga",
       "f_cpu": "25000000L",
       "hwids": [
@@ -9,13 +9,14 @@
           "0x6015"
         ]
       ],
-      "mcu": "ECP5-LFE5U-25F-CABGA381",
+      "mcu": "ECP5-LFE5U-12F-CABGA381",
       "pack": "CABGA381",
       "size": "25k",
-      "type": "lfe5u"
+      "type": "lfe5u",
+      "idcode": "0x21111043"
     },
     "frameworks": [],
-    "name": "ULX3S-25F",
+    "name": "ULX3S-12F",
     "upload": {
       "command": "ujprog",
       "args": "-q -j SRAM"

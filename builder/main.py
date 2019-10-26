@@ -141,7 +141,10 @@ pnr = Builder(
 # Builder: ecppack (.config --> .bin)
 #
 bitstream = Builder(
-    action='ecppack --db {0} {1} $SOURCE $TARGET'.format(DATABASE_PATH, env.BoardConfig().get('build.idcode', '')),
+    action='ecppack --db {0} {1} $SOURCE $TARGET'.format(
+        DATABASE_PATH, 
+        '--idcode ' + env.BoardConfig().get('build.idcode', '') if env.BoardConfig().get('build.idcode', '') else ''
+    ),
     suffix='.bin',
     src_suffix='.config')
 
