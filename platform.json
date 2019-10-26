@@ -23,15 +23,51 @@
           "system": [
               "linux_x86_64"
           ]
-        }
+        },
+        {
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-yosys-windows_amd64-0.9.201910.tar.gz",
+          "sha1": "01fedbc7c42569f4e55e14a2a4943f43d84e1d89",
+          "version": "0.9.201910",
+          "system": [
+              "windows_amd64"
+          ]
+        },
+        {
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-yosys-darwin-0.9.201910.tar.gz",
+          "sha1": "b8b3d84538dc7431286e0682429be84af91d0900",
+          "version": "0.9.201910",
+          "system": [
+              "darwin", 
+              "darwin_x86_64", 
+              "darwin_i386"
+          ]
+        }      
       ],
-      "toolchain-ice40": [
+      "toolchain-ecp5": [
         {
           "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-ecp5-linux_x86_64-2019.10.1.tar.gz",
-          "sha1": "05ac575f313e32327426983b34a0442ff6b1bb36",
+          "sha1": "18b71e8886515214d3f61c4df027a7f1b91d58ef",
           "version": "2019.10.1",
           "system": [
               "linux_x86_64"
+          ]
+        },
+        {
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-ecp5-windows_amd64-2019.10.1.tar.gz",
+          "sha1": "0cbc4a33244f93af77c0fb8cbcba00bbfbe4ccef",
+          "version": "2019.10.1",
+          "system": [
+              "windows_amd64"
+          ]
+        },
+        {
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-ecp5-darwin-2019.10.1.tar.gz",
+          "sha1": "357eb92dda43a93e207e4a4f904d65b9c2c75454",
+          "version": "2019.10.1",
+          "system": [
+              "darwin", 
+              "darwin_x86_64", 
+              "darwin_i386"
           ]
         }
       ],
@@ -43,6 +79,24 @@
           "system": [
               "linux_x86_64"
           ]
+        },
+        {
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-iverilog-windows_amd64-10.3.0.tar.gz",
+          "sha1": "efbce86edb47c393771c0dddd7dbf05854ae09e7",
+          "version": "10.3.0",
+          "system": [
+              "windows_amd64"
+          ]
+        },
+        {
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-iverilog-darwin-10.3.0.tar.gz",
+          "sha1": "c8de99ba63e0842ec0e423b4e7220108c15b93aa",
+          "version": "10.3.0",
+          "system": [
+              "darwin", 
+              "darwin_x86_64", 
+              "darwin_i386"
+          ]
         }
       ],
       "toolchain-verilator": [
@@ -52,6 +106,24 @@
           "version": "4.20.0",
           "system": [
               "linux_x86_64"
+          ]
+        },
+        {
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-verilator-windows_amd64-4.20.0.tar.gz",
+          "sha1": "354080f56376ab91869e51692aa1d87a21939f45",
+          "version": "4.20.0",
+          "system": [
+              "windows_amd64"
+          ]
+        },
+        {
+          "url": "https://github.com/mmicko/platform-lattice_ice40/releases/download/test/toolchain-verilator-darwin-4.20.0.tar.gz",
+          "sha1": "165c6d7172635cada626a73e10e77545e92c57f5",
+          "version": "4.20.0",
+          "system": [
+              "darwin", 
+              "darwin_x86_64", 
+              "darwin_i386"
           ]
         }
       ]
