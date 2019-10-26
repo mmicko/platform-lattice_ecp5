@@ -125,27 +125,27 @@ synth = Builder(
     src_suffix='.v')
 
 #
-# Builder: Arachne-pnr (.json --> .asc)
+# Builder: Arachne-pnr (.json --> .config)
 #
 pnr = Builder(
-    action='nextpnr-ecp5 --{1} --package {2} --json $SOURCE --lpf {3} --textcfg $TARGET --quiet --lpf-allow-unconstrained'.format(
+    action='nextpnr-ecp5 --{1} --package {2} --json $SOURCE --textcfg $TARGET --lpf {3} -q'.format(
         env.BoardConfig().get('build.type', ''),
         env.BoardConfig().get('build.size', '25k'),
         env.BoardConfig().get('build.pack', 'CABGA381'),
         LPF
     ),
-    suffix='.asc',
+    suffix='.config',
     src_suffix='.json')
 
 #
-# Builder: ecppack (.config --> .bin)
+# Builder: ecppack (.config --> .bit)
 #
 bitstream = Builder(
     action='ecppack --db {0} {1} $SOURCE $TARGET'.format(
         DATABASE_PATH, 
         '--idcode ' + env.BoardConfig().get('build.idcode', '') if env.BoardConfig().get('build.idcode', '') else ''
     ),
-    suffix='.bin',
+    suffix='.bit',
     src_suffix='.config')
 
 
@@ -153,13 +153,13 @@ env.Append(BUILDERS={
     'Synth': synth, 'PnR': pnr, 'Bin': bitstream})
 
 blif = env.Synth(TARGET, [src_synth])
-asc = env.PnR(TARGET, [blif, LPF])
-binf = env.Bin(TARGET, asc)
+config = env.PnR(TARGET, [blif, LPF])
+bit = env.Bin(TARGET, config)
 
 #
 # Target: Upload bitstream
 #
-target_upload = env.Alias('upload', binf, '$UPLOADBINCMD')
+target_upload = env.Alias('upload', bit, '$UPLOADBINCMD')
 AlwaysBuild(target_upload)
 
 #
@@ -219,7 +219,7 @@ AlwaysBuild(lint)
 #
 # Setup default targets
 #
-Default([binf])
+Default([bit])
 
 #
 # Target: Clean generated files
